@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         屏蔽 DevTools 检测
 // @namespace    https://github.com/LFWQSP2641/
-// @version      1.2
+// @version      1.3
 // @description  拦截 devtools-detector.js 脚本，禁用页面检测 DevTools 的功能。
 // @author       LFWQSP2641
 // @match        *://*.chaoxing.com/*
@@ -15,8 +15,6 @@
     const CONFIG = {
         // 监听并移除检测脚本标签
         removeScriptTags: true,
-        // 注入虚假的 devtoolsDetector 对象
-        injectFakeDetector: true,
         // 高级防御策略（覆盖原生函数、监听属性等）
         advancedProtection: true,
         // 拦截可能的网络请求
@@ -76,7 +74,7 @@
     }
 
     // 2. 注入高级防御代码
-    if (CONFIG.injectFakeDetector || CONFIG.advancedProtection) {
+    if (CONFIG.advancedProtection) {
         const script = document.createElement('script');
         script.textContent = `
             (function() {
