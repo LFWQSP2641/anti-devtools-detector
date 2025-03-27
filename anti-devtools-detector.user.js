@@ -5,6 +5,7 @@
 // @description  拦截 devtools-detector.js 脚本，禁用页面检测 DevTools 的功能。
 // @author       LFWQSP2641
 // @match        *://*.chaoxing.com/*
+// @match        *://blog.aepkill.com/demos/devtools-detector/*
 // @run-at       document-start
 // ==/UserScript==
 
